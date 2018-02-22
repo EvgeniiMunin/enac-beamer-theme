@@ -1,38 +1,50 @@
 # beamerthemeEnac
 
-Latex Beamer theme based on Enac <http://www.enac.fr> official graphic charter
+Latex Beamer theme based on [Enac] (http://www.enac.fr) official graphic charter
 
-by Gautier Hattenberger <gautier.hattenberger@enac.fr>
+by Gautier Hattenberger (<gautier.hattenberger@enac.fr>)
 licensed under CC-BY-4.0
 
-== Install ==
+Install
+=======
 
-=== System ===
+System
+------
 
 If you are using a Debian/Ubuntu linux distribution, type the following command and cross fingers
 
- sudo make install
+```
+sudo make install
+```
 
 Otherwise, check/modify the install directory in the Makefile
 
-=== Local install ===
+Local install
+-------------
 
 To use the theme from a local directory and run pdflatex command in a terminal:
 
- export TEXMFHOME=</path/to/the/theme/directory>
- sudo update-texmf
+```
+export TEXMFHOME=</path/to/the/theme/directory>
+sudo update-texmf
+```
 
-== Usage ==
+Usage
+=====
 
 Select the theme in your beamer presentation:
 
- \usetheme{Enac}
+```
+\usetheme{Enac}
+```
 
-== Options ==
+Options
+-------
 
- - rounded: use the rounded block with shadow format, rectanble by default
- - backgroundimage=<some_image>: select a custom background image
+ - **rounded**: use the rounded block with shadow format, rectanble by default
+ - **backgroundimage=<some_image>**: select a custom background image
 
-== Example ==
+Example
+-------
 
-see files in 'example' folder
+see files in *example* folder
