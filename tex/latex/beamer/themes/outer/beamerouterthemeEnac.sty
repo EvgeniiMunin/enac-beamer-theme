@@ -1,0 +1,68 @@
+% Enac Beamer Theme 2018 by Gautier Hattenberger <gautier.hattenberger@enac.fr>
+% licensed under CC-BY-4.0
+% 
+
+\RequirePackage{calc}
+\RequirePackage{tikz}
+
+\def\Enac@backgroundimage{fond-Enac-2017.pdf}
+\DeclareOptionBeamer{backgroundimage}{\def\Enac@backgroundimage{#1}}
+
+\ProcessOptionsBeamer
+
+\mode<presentation>
+
+\pgfdeclareimage[interpolate=true, height=\the\paperheight, width=\the\paperwidth]{backgroundImage}{\Enac@backgroundimage}
+
+
+\setbeamertemplate{background}{
+  \begin{tikzpicture}
+    \useasboundingbox (0,0) rectangle (\the\paperwidth, \the\paperheight) ;
+    \pgftext[at=\pgfpoint{0cm}{0cm},left,base]{\pgfuseimage{backgroundImage}} ;
+  \end{tikzpicture}
+}
+
+
+\defbeamertemplate*{frametitle}{enac theme}[1][left]
+{
+  \ifbeamercolorempty[bg]{frametitle}{}{\nointerlineskip}%
+  \@tempdima=\textwidth%
+  \advance\@tempdima by\beamer@leftmargin%
+  \advance\@tempdima by\beamer@rightmargin%
+
+  \begin{beamercolorbox}[sep=0.7cm,#1,wd=\the\@tempdima,leftskip=1.3cm]{frametitle}
+    \usebeamerfont{my frametitle}%
+    \vbox{}\vskip-0.5ex%
+    \if@tempswa\else\csname beamer@fte#1\endcsname\fi%
+    \strut\insertframetitle\strut\par%
+%     {%
+%       \ifx\insertframesubtitle\@empty%
+%       \else%
+%       {\usebeamerfont{framesubtitle}\usebeamercolor[fg]{framesubtitle}\insertframesubtitle\strut\par}%
+%       \fi
+%     }%
+%     \vskip-1ex%
+%     \if@tempswa\else\vskip-0.2cm\fi% set inside beamercolorbox... evil here...
+  \end{beamercolorbox}%
+}
+
+\def\beamer@fteright{\vskip0.cm\advance\leftskip by 1.7cm\advance\rightskip by1.7cm}
+
+
+\defbeamertemplate*{footline}{infolines theme}
+{
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=0.8\paperwidth,ht=2.25ex,dp=1ex,left]{foot}%
+      \hspace*{1ex}\insertshorttitle
+      \ifx\insertsection\@empty\else\hspace*{1ex}/\hspace*{1ex}\insertsection\fi
+      \ifx\insertsubsection\@empty\else\hspace*{1ex}/\hspace*{1ex}\insertsubsection\fi
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[wd=0.18\paperwidth,ht=2.25ex,dp=1ex,right]{foot}%
+      \insertframenumber{} \hspace*{1ex}
+    \end{beamercolorbox}
+  }%
+  \vskip0pt%
+}
+
+

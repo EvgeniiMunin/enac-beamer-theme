@@ -1,0 +1,68 @@
+\documentclass[handout]{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage[francais]{babel}
+\usepackage{lmodern}
+\usepackage{textcomp}
+\usepackage{pgf}
+
+
+\usetheme{Enac}
+% \usetheme[rounded]{Enac}
+
+\author{Gautier Hattenberger}
+
+\title[Enac beamer theme]{Enac Beamer theme example}
+\date{2018}
+
+\begin{document}
+
+\maketitle
+
+\section{First section}
+
+\begin{frame}
+ \frametitle{Outline}
+ \tableofcontents
+\end{frame}
+
+\subsection{Fisrt subsection}
+
+\begin{frame}
+ \frametitle{What a nice frame}
+ 
+ You can use this theme with rectangle (default) or rounded blocks with the option \emph{rounded}
+
+ \begin{block}{block}
+  this is how a block looks like
+ \end{block}
+ \begin{exampleblock}{exampleblock}
+  same for example block
+ \end{exampleblock}
+ \begin{alertblock}{alertblock}
+  or for \alert{alert block} if it is really important
+ \end{alertblock}
+\end{frame}
+
+\subsection{Second subsection}
+
+\begin{frame}
+ \frametitle{Yet another frame}
+ A list
+ \begin{itemize}
+ \item item 1
+ \item item 2
+ \end{itemize}
+ An enumarate
+ \begin{enumerate}
+  \item enum 1
+  \item enum 2
+ \end{enumerate}
+ An equation
+ \begin{displaymath}
+  E = mc^2
+ \end{displaymath}
+\end{frame}
+\end{document}
