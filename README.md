@@ -1,6 +1,6 @@
 # beamerthemeEnac
 
-Latex Beamer theme based on [Enac] (http://www.enac.fr) official graphic charter
+Latex Beamer theme based on [Enac](http://www.enac.fr) official graphic charter
 
 by Gautier Hattenberger (<gautier.hattenberger@enac.fr>)
 licensed under CC-BY-4.0
