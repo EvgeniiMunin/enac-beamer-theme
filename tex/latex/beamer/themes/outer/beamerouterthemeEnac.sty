@@ -14,7 +14,6 @@
 
 \pgfdeclareimage[interpolate=true, height=\the\paperheight, width=\the\paperwidth]{backgroundImage}{\Enac@backgroundimage}
 
-
 \setbeamertemplate{background}{
   \begin{tikzpicture}
     \useasboundingbox (0,0) rectangle (\the\paperwidth, \the\paperheight) ;
@@ -22,32 +21,14 @@
   \end{tikzpicture}
 }
 
-
 \defbeamertemplate*{frametitle}{enac theme}[1][left]
 {
-  \ifbeamercolorempty[bg]{frametitle}{}{\nointerlineskip}%
-  \@tempdima=\textwidth%
-  \advance\@tempdima by\beamer@leftmargin%
-  \advance\@tempdima by\beamer@rightmargin%
-
-  \begin{beamercolorbox}[sep=0.7cm,#1,wd=\the\@tempdima,leftskip=1.3cm]{frametitle}
+  \begin{beamercolorbox}[sep=0.7cm,#1,wd=\the\paperwidth,leftskip=1.3cm]{frametitle}
     \usebeamerfont{my frametitle}%
     \vbox{}\vskip-0.5ex%
-    \if@tempswa\else\csname beamer@fte#1\endcsname\fi%
     \strut\insertframetitle\strut\par%
-%     {%
-%       \ifx\insertframesubtitle\@empty%
-%       \else%
-%       {\usebeamerfont{framesubtitle}\usebeamercolor[fg]{framesubtitle}\insertframesubtitle\strut\par}%
-%       \fi
-%     }%
-%     \vskip-1ex%
-%     \if@tempswa\else\vskip-0.2cm\fi% set inside beamercolorbox... evil here...
   \end{beamercolorbox}%
 }
-
-\def\beamer@fteright{\vskip0.cm\advance\leftskip by 1.7cm\advance\rightskip by1.7cm}
-
 
 \defbeamertemplate*{footline}{infolines theme}
 {
@@ -62,7 +43,4 @@
       \insertframenumber{} \hspace*{1ex}
     \end{beamercolorbox}
   }%
-  \vskip0pt%
 }
-
-
